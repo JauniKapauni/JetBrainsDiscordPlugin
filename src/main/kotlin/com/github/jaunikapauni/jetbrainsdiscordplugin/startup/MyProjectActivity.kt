@@ -4,6 +4,7 @@ import com.intellij.openapi.application.ApplicationInfo
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.startup.ProjectActivity
+import com.github.jaunikapauni.jetbrainsdiscordplugin.discord.DiscordPresenceService
 
 class MyProjectActivity : ProjectActivity {
 
@@ -12,8 +13,6 @@ class MyProjectActivity : ProjectActivity {
         val ideName = ApplicationInfo.getInstance().versionName
         val projectName = project.name
 
-        println("IDE: $ideName")
-        println("Project: $projectName")
-
+        DiscordPresenceService.connect(projectName, ideName)
     }
 }

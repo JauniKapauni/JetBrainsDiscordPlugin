@@ -6,8 +6,16 @@ plugins {
     id("org.jetbrains.changelog")
 }
 
+repositories {
+    mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
+}
+
 dependencies {
-    testImplementation("junit:junit:4.13.2")
+    implementation("io.github.CDAGaming:DiscordIPC:0.10.2")
+    //testImplementation("junit:junit:4.13.2")
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
     intellijPlatform {
